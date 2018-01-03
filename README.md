@@ -1,5 +1,6 @@
 # SQLite_basics
 Basic operations of SQLite database:
+      
       1) Select items:
             Select ID from City;
             
