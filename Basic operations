@@ -2,7 +2,7 @@
       1) Select items:
             Select ID from City;
             
-      2) Add rows:
+      2) Add a row:
             insert into City
             (ID
             ,Name
@@ -26,3 +26,20 @@
             year char(4) not null,
             name char(3) not null
             );
+
+      4) Add comments:(Comment columns 'Name' and 'CountryCode')
+            select ID
+            /*Name
+            ,CountryCode
+            */
+            ,District
+            ,Population
+            from City
+            
+                       (Comment a single column 'Name')
+            select ID
+            --,Name
+            ,CountryCode
+            ,District
+            ,Population
+            from City
