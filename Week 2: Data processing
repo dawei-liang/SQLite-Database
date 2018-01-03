@@ -1,0 +1,6 @@
+
+  1) Filtering:
+    select * from City
+    where Name = 'aaa';
+    
+  2)
