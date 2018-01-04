@@ -31,4 +31,4 @@
     ,District
     from City
     order by 1
-    desc;
+    desc;  (asc)
