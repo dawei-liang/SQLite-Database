@@ -1,6 +1,6 @@
 # SQLite_basics
       
-Download SQLite Spy:
+Download SQLiteSpy:
 https://www.yunqa.de/delphi/products/sqlitespy/index
 Unzip
 
