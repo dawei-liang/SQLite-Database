@@ -30,7 +30,7 @@
     ,Name
     ,District
     from City
-    order by 1
+    order by 1   # First column
     desc;  (asc)
 
   4）Math operations:
