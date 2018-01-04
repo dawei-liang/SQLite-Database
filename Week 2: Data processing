@@ -32,3 +32,16 @@
     from City
     order by 1
     desc;  (asc)
+
+  4）Math operations:
+    select 
+    ID
+    ,Name
+    ,Population
+    ,ID * Population / 100 as per
+    from City 
+    
+  5) Aggregate:
+    select count (distinct ID) as num
+    ,sum (ID * Population) as new
+    from City
