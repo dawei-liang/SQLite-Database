@@ -38,10 +38,24 @@
     ID
     ,Name
     ,Population
-    ,ID * Population / 100 as per
+    ,ID * Population / 100 as new
     from City 
     
   5) Aggregate:
-    select count (distinct ID) as num
-    ,sum (ID * Population) as new
+    select 
+    ID
+    ,Name
+    ,Population
+    ,count (*) as new   
     from City
+    where ID > 3000   # Count all rows from ID > 3000
+    
+  6) Group:
+    select 
+    ID
+    ,Population
+    ,count (*) as new
+    from City
+    where ID > 3300
+    group by Population
+    having count(*) > 2;   #Using index 'Population' to group data and conditioning on count > 2
