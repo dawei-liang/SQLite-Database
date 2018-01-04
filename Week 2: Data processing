@@ -1,6 +1,25 @@
 
   1) Filtering:
     select * from City
-    where Name = 'aaa';
+    where ID between 0 and 5;
     
-  2)
+    select 
+    ID
+    ,Name
+    ,Population
+    from City
+    where Name in ('aaa', 'Kabul');
+    
+    select 
+    ID
+    ,Name
+    from City
+    where not Name = 'aaa';
+
+
+  2) Wildcard:
+    select 
+    ID like 'b%a'
+    ,Name
+    from City
+    where Name like 'b%a';
