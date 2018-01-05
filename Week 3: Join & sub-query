@@ -1,0 +1,31 @@
+  1) Sub-query:
+    select ID
+    ,Name
+    ,Population
+    from City
+    where Name in (select
+    Name
+    from Country
+    where GNP > 5000);   #Sub-query from country: condition on GNP>5000
+    
+  2) Cartesian join:
+    select ID
+    ,Code
+    ,GNP
+    from City, Country
+    where City.ID = Country.GNP
+    
+  3) Inner join:
+    select ci.ID
+    ,co.Code
+    ,e.Percentage
+    from ((City ci inner join Country co on ci.Name = co.Name)   # Qualify 3 tables: ci, co, e
+    inner join CountryLanguage e on co.Code = e.CountryCode)   # First join ci, co on ci.Name = co.Name; Then join e on co.Code = e.Countrycode
+    
+  4) Self join:
+    select a.Code as CCC
+    ,b.Region as RRR
+    ,c.LocalName as LLL
+    from Country a, Country b, Country c   # 1 table into 3 tables a, b, c
+    where a.GNP > b.SurfaceArea and a.GNP > c.GNPOld   # Self join conditions
+    order by CCC;
