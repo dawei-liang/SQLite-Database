@@ -1,0 +1,36 @@
+
+  1) String:
+    select ID
+    ,CountryCode
+    ,District || '('||CountryCode||')'   # Combine strings
+    ,trim ('L') as Extra   #Select if including 'L'
+    ,substr(Name,2,1) 
+    ,upper (District)  
+    from City;
+    
+  2) Date time:
+    select Birthdate
+    ,strftime('%y', Birthdate) as year
+    ,strftime('%m', Birthdate) as month
+    ,date(('now') - Birthdate) as age
+    from xxx;
+    
+  3) Case statements:
+    select ID
+    ,Name
+    ,Population
+    ,case 
+    when Population < 200000 then 'small'
+    else 'large'
+    end city_size
+    from City;
+    
+  4) Create view:
+    create view my_view
+    as
+    select ci.ID
+    ,ci.Name
+    ,ci.CountryCode
+    ,co.Code
+    from City ci
+    inner join Country co on ci.CountryCode = co.Code;   # To drop: drop view (view name)
