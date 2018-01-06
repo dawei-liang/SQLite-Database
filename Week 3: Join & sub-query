@@ -29,3 +29,10 @@
     from Country a, Country b, Country c   # 1 table into 3 tables a, b, c
     where a.GNP > b.SurfaceArea and a.GNP > c.GNPOld   # Self join conditions
     order by CCC;
+    
+  5) Left join:
+    select ci.ID
+    ,co.GNP
+    from City ci
+    left join Country co on ci.CountryCode = co.Code
+    order by ci.ID
