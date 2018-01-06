@@ -13,7 +13,7 @@
     ,Code
     ,GNP
     from City, Country
-    where City.ID = Country.GNP
+    where City.ID = Country.GNP   # Check the result number by multiply between left and right
     
   3) Inner join:
     select ci.ID
@@ -34,7 +34,7 @@
     select ci.ID
     ,co.GNP
     from City ci
-    left join Country co on ci.CountryCode = co.Code   # Left: City <-> Country
+    left join Country co on ci.CountryCode = co.Code   # Left: City <-> Country; check results by checking the left
     order by ci.ID
 
   6) Union:
