@@ -34,5 +34,16 @@
     select ci.ID
     ,co.GNP
     from City ci
-    left join Country co on ci.CountryCode = co.Code
+    left join Country co on ci.CountryCode = co.Code   # Left: City <-> Country
     order by ci.ID
+
+  6) Union:
+    select ci.ID
+    ,ci.Name
+    from City ci
+    where ID between 0 and 5
+    union
+    select co.SurfaceArea
+    ,co.Name
+    from Country co
+    where SurfaceArea < 500;   # City(ID, Name) union Country(SurfaceArea, Name)
