@@ -1,0 +1,27 @@
+
+select(
+select Salary FROM Employee group by salary
+ORDER BY Salary DESC LIMIT 1 OFFSET 1)
+as SecondHighestSalary
+
+
+## 
+group by to eliminate repetitions
+Second select: Reconstruct column, return null if the first select is empty
+
+
+
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+declare m int;
+set m = n - 1;
+  RETURN (
+      # Write your MySQL query statement below.
+      select(
+          select Salary from Employee group by Salary
+          order by Salary
+          desc limit m, 1
+      )
+      as getNthHighestSalary
+  );
+END
