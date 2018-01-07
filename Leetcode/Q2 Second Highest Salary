@@ -1,0 +1,10 @@
+
+select(
+select Salary FROM Employee group by salary
+ORDER BY Salary DESC LIMIT 1 OFFSET 1)
+as SecondHighestSalary
+
+
+## 
+group by to eliminate repetitions
+Second select: Reconstruct column, return null if the first select is empty
